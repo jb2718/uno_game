@@ -1,0 +1,13 @@
+==============
+UNO
+==============
+
+Game Flow
+----------
+1. deal cards and set first discard card
+
+2. player 1 follows instructions of discard card OR discards a card OR adds a card to hand
+
+3. player 2 follows instructions of discard card OR discards a card OR adds a card to hand
+
+4. Repeat 2 & 3 until first player runs out of cards
