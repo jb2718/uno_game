@@ -11,3 +11,81 @@ Game Flow
 3. player 2 follows instructions of discard card OR discards a card OR adds a card to hand
 
 4. Repeat 2 & 3 until first player runs out of cards
+
+------------------------------------------
+OOP Breakdown - 
+Step 1: Write description of problem
+------------------------------------------
+- Uno is a game for 2 players where players start with 7 cards each and try to get rid of their cards first
+
+- A player can get rid of cards in 2 ways:
+
+  1. match the color, number, symbol of the top discard card
+
+  2. use a wild card
+
+- Cards are added to a player's hand in 2 ways:
+  
+  1. at the start of player's turn, she has no matches to the top discard card in her hand OR she chooses not to play any of the cards she has
+    - player must pull one card from the deck
+
+  2. at the start of a player's turn, the top card on the discard pile commands her to add cards to her hand
+    - player must pull however many cards she is commanded to pull from the deck
+
+- Aside from adding and discarding cards to players' hands, there is one more thing to consider - the game flow.  There are special cards that allow players to alter the flow of the game:
+  - skip: skips a player's turn
+  - reverse: reverses the flow of turns
+  - the color to match can be arbitrarily changed with a wild card
+
+
+------------------------------------------
+OOP Breakdown - 
+Step 2: Extract major nouns and verbs from
+the description
+------------------------------------------
+
+Nouns
+------
+game, player, card, color, number, symbol, discard card, wild card, hand, turn, match, deck, flow
+
+Verbs
+-----
+add card, start, get rid of card, match card, pull card, choose, command, alter flow, skip, reverse, change color
+
+
+------------------------------------------
+OOP Breakdown - 
+Step 3: Group verbs with the nouns they
+are associated with
+------------------------------------------
+
+Game: { start, deal cards (this is implicit in 'players start with 7 cards...see #1 of game flow section') }
+
+Player: { add card/pull card, get rid of card, choose }
+
+Card: { match card }
+- these are more like attributes of a card: Color, Number, Symbol
+- these are types of cards: Discard card, Wild card
+
+Hand: {  }
+
+Turn: {}
+
+Match: {}
+
+Deck: {}
+
+Flow: { alter flow, skip, reverse, change color }
+
+Loose Verb:
+command --> should this be something a card does?  or will the game tell the player to do it?
+
+
+------------------------------------------
+OOP Breakdown - 
+Step 4: Set up skeleton classes and 
+methods, where nouns = classes and 
+verbs = methods in the classes
+------------------------------------------
+
+# see main.rb
