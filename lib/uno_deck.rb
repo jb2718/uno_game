@@ -1,32 +1,16 @@
-require_relative 'card'
+require_relative 'card_collection'
 
-class Deck
-  attr_accessor :cards
+class UnoDeck < CardCollection
   COLORS = [:red, :blue, :green, :yellow]
   ACTIONS = [:skip, :reverse, :draw_two]
   WILDS = [:draw_four, :wild]
-  def initialize
-    @cards = []
-  end
-  
-  def create_new
+
+  def populate
     create_numbered_cards
     create_action_cards
     create_wild_cards
   end
 
-  def shuffle
-    3.times { @cards.shuffle! }
-  end
-
-  def deal_card
-    @cards.pop
-  end
-
-  def add_card(card)
-    @cards << card
-  end
-  
   private
 
   def create_numbered_cards
@@ -52,10 +36,17 @@ class Deck
 
   def create_wild_cards
     stack = WILDS.product([nil])
-    2.times do
+    4.times do
       stack.each do |card| 
         @cards << Card.new(card.first, card.last)
       end
     end    
   end
 end
+
+# deck = UnoDeck.new
+# deck.populate
+# p deck
+# deck.sort!
+
+# p deck.count

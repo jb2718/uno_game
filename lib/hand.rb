@@ -1,21 +1,7 @@
-class Hand
-  attr_reader :cards
-  def initialize
-    @cards = []
-  end
+require_relative 'card_collection'
 
-  def sort
-  end
-
-  def add_card(card)
-    @cards << card
-  end
-
+class Hand < CardCollection
   def uno?
     cards.count == 1
-  end
-
-  def reset
-    @cards = []
   end
 end
