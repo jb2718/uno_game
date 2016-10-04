@@ -10,8 +10,9 @@ class Player
 #   def pull_card
 #   end
 
-#   def play_card
-#   end
+  def play_card
+    hand.deal_card
+  end
 
 #   def choose
 #   end

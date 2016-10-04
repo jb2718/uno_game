@@ -33,6 +33,11 @@ class CardCollection
   def reset
     cards.clear
   end
+
+  def top_card
+    cards.last
+  end
+
 end
 
 # hand = CardCollection.new

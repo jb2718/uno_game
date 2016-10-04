@@ -57,6 +57,10 @@ class Card
     (!color.nil? && color == other_card.color) ||
     (value == other_card.value)
   end
+
+  def to_s
+    "Card => value: #{value}, color: #{color}"
+  end
 end
 card1 = Card.new(:reverse, :red)
 card2 = Card.new(:reverse, :yellow)
